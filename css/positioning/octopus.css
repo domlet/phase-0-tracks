@@ -6,31 +6,24 @@ Use positioning to put the hat and glasses on the octopus
 
 div 
 {
-  margin: 10px;
-  background-color: yellow; 
-  border: 1px solid red;
   width: 600px;
   z-index: 4;
-  margin-left: auto;
-  margin-right: auto;
+  margin: 20px auto 0 auto;
   text-align: center;
-  height: 400px;
+  height: 350px;
 }
 
  #hat 
  {
   position: relative;
-  display: inline;
   left: -60px;
   top: 0;
   z-index: 3;
-  float: 
  }
 
  #glasses
  {
   position: relative;
-   display: inline;
   top: 38px;
   left: 144px;
   z-index: 2;
@@ -39,7 +32,6 @@ div
  #octopus
  {
   position: relative;
-  display: inline;
   top: -126px;
   z-index: 1;
  }
