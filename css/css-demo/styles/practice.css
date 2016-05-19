@@ -2,6 +2,7 @@
   {
     font-size: .8em; 
   }
+
 .job 
   {
     background-color: #e9e5dc;
@@ -9,7 +10,20 @@
     margin-top: 5px;
     border-radius: 25px;
   }
+
   .accomplishments 
   {
     font-size: .8em;
+  }
+
+/* Syntax for using a pseudoselector */
+  .accomplishments li:first-of-type 
+  {
+    background-color: red;
+  }
+
+/* Syntax for styling this child element */
+  ul > li 
+  {
+    background-color: blue;
   }
