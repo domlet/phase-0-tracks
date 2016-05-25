@@ -3,9 +3,18 @@ body {
 }
 
 header {
-    background-color: red; position: fixed ;  top: 0; left: 0;
+    background-color: red;
+    position: fixed;
+    top: 0;
+    left: 0;
 }
-div {text-align: center; display: block; margin-top: 160px}
+
+div {
+    text-align: center;
+    display: block;
+    margin-top: 160px
+}
+
 .column-1,
 .column-2 {
     width: 40%;
@@ -19,32 +28,43 @@ div {text-align: center; display: block; margin-top: 160px}
     border: 0.5em dashed purple;
 }
 
-summary {background-color: white}
-details { background-color: lime }
-summary::-webkit-details-marker {
-  display: none; 
-}
-summary:after {
-  background: red; 
-  border-radius: 5px; 
-  content: "+"; 
-  color: #fff; 
-  float: left; 
-  font-size: 1em; 
-  font-weight: bold; 
-  margin:0 10px 0 0; 
-  padding: 0; 
-  text-align: center; 
-  width: 15px;
-}
-details[open] summary:after {
-  content: "-";
+summary {
+    background-color: white
 }
 
+details {
+    background-color: lime
+}
+
+summary::-webkit-details-marker {
+    display: none;
+}
+
+summary:after {
+    background: red;
+    border-radius: 5px;
+    content: "+";
+    color: #fff;
+    float: left;
+    font-size: 1em;
+    font-weight: bold;
+    margin: 0 10px 0 0;
+    padding: 0;
+    text-align: center;
+    width: 15px;
+}
+
+details[open] summary:after {
+    content: "-";
+}
 
 footer {
     background-color: orange;
-    padding: 20px; position: fixed; bottom: 0;width: 100%; left: 0;
+    padding: 20px;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    left: 0;
 }
 
 h1 {
@@ -59,4 +79,7 @@ body {
     font-family: "helvetica", sans-serif
 }
 
-h2:hover {text-decoration: underline; text-shadow: 4px 4px black; }
+h2:hover {
+    text-decoration: underline;
+    text-shadow: 4px 4px black;
+}
