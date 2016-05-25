@@ -1,0 +1,35 @@
+### write the algorithm for using an elevator ###
+
+# define locations
+
+space = {x,y,z}
+beg_dest = {1,-2,0}
+end_dest = {1,-2,15}
+elevator = {0,0,0; 0,2,0; 2,2,0; 2,0,0}
+min_dest = {1,-2,0}
+max_dest = {1,-2,20}
+
+# enter elevator
+
+if doorisopen = false
+request = up
+otherwise
+occupy elevator
+
+# push button for destination
+
+request = end_dest
+
+# exit elevator
+
+if location = x,x,15
+and
+doorisopen = true
+occupy end_dest
+
+### Release 1: Find a Real-Life Algorithm ###
+
+# common task in your life 
+# write out the steps in algorithms.txt 
+# (labeled with the name of the task)
+
