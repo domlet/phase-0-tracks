@@ -1,3 +1,4 @@
+### Release 0: Equip Your New Robot ###
 ### write the algorithm for using an elevator ###
 
 # define locations
@@ -29,7 +30,22 @@ occupy end_dest
 
 ### Release 1: Find a Real-Life Algorithm ###
 
-# common task in your life 
-# write out the steps in algorithms.txt 
-# (labeled with the name of the task)
+# Make pour-over coffee
 
+water_hot = true
+coffee_ground = true
+# mug fills from 0 (empty) to 10 (full)
+mug_filled = 0 
+timer = 5 #mins
+
+If water_hot = true && coffee_ground = true
+  Until mug_filled = 10
+    Transfer water_hot into mug.
+End
+
+Start timer  
+
+If timer == 0
+  remove coffee grounds
+  add milk
+End
