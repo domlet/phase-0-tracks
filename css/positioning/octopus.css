@@ -1,0 +1,38 @@
+/* 
+Use positioning to put the hat and glasses on the octopus 
+(you might need to add a div to function as a parent container 
+ */
+
+
+div 
+{
+  width: 600px;
+  z-index: 4;
+  margin: 20px auto 0 auto;
+  text-align: center;
+  height: 350px;
+  background-color: yellow;
+}
+
+ #hat 
+ {
+  position: relative;
+  left: -60px;
+  top: 0;
+  z-index: 3;
+ }
+
+ #glasses
+ {
+  position: relative;
+  top: 38px;
+  left: 144px;
+  z-index: 2;
+ }
+
+ #octopus
+ {
+  position: relative;
+  top: -126px;
+  z-index: 1;
+ }

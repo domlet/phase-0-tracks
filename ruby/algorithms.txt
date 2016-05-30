@@ -1,0 +1,51 @@
+### Release 0: Equip Your New Robot ###
+### write the algorithm for using an elevator ###
+
+# define locations
+
+space = {x,y,z}
+beg_dest = {1,-2,0}
+end_dest = {1,-2,15}
+elevator = {0,0,0; 0,2,0; 2,2,0; 2,0,0}
+min_dest = {1,-2,0}
+max_dest = {1,-2,20}
+
+# enter elevator
+
+if doorisopen = false
+request = up
+otherwise
+occupy elevator
+
+# push button for destination
+
+request = end_dest
+
+# exit elevator
+
+if location = x,x,15
+and
+doorisopen = true
+occupy end_dest
+
+### Release 1: Find a Real-Life Algorithm ###
+
+# Make pour-over coffee
+
+water_hot = true
+coffee_ground = true
+# mug fills from 0 (empty) to 10 (full)
+mug_filled = 0 
+timer = 5 #mins
+
+If water_hot = true && coffee_ground = true
+  Until mug_filled = 10
+    Transfer water_hot into mug.
+End
+
+Start timer  
+
+If timer == 0
+  remove coffee grounds
+  add milk
+End
