@@ -1,4 +1,10 @@
+# Ask qty
+puts "How many employees will be processed?"
+num = gets.chomp.to_i
+num.times do
+
 # Ask name
+puts "------------------ BEGIN ------------------"
 puts "What is your first name?"
 first_name = gets.chomp
 # Require a response
@@ -89,7 +95,7 @@ end
 puts "Want some garlic bread? (y/n)"
 likes_garlic = gets.chomp
 # Check if likes garlic
-while likes_garlic != "y" || "n"
+while likes_garlic != "y" && likes_garlic != "n"
   puts "Want some garlic bread? (y/n)"
   likes_garlic = gets.chomp
 end
@@ -113,8 +119,8 @@ end
 puts "Would you like to enroll in the company’s health insurance? (y/n)"
 likes_insurance = gets.chomp
 # Require a response
-while likes_insurance != "y" || "n"
-  puts "Want some insurance? Please answer with one letter: (y/n)"
+while likes_insurance != "y" && likes_insurance != "n"
+  puts "Please answer with one letter: (y/n) Want some insurance? "
   likes_insurance = gets.chomp
 end
 
@@ -129,45 +135,77 @@ if likes_insurance == true
 else 
   puts "likes_insurance is false"
 end
+puts "\n"
 
+# use a loop to ask the employee to name any allergies, 
+# one at a time. The employee can type “done” when finished.
+# As long as the allergy is not “sunshine,” 
+# continue the loop for as long as is needed. 
+# If at any point the employee lists “sunshine” as an allergy, 
+# skip directly to the result of “Probably a vampire.”
 
-
-wolves_like_sunshine = true
-wolves_like_garlic = true
-vampires_like_sunshine = false
-vampires_like_garlic = false
-  # Now run each of the lines below. 
-  # Before hitting Enter on a line, 
-  # stop and make a guess as to what it will return, 
-  # then see whether you were right. 
-  # Remember to think about evaluation order: 
-  # anything in parentheses will evaluate first.
-
-wolves_like_garlic && wolves_like_sunshine
-wolves_like_garlic || vampires_like_garlic
-wolves_like_garlic && vampires_like_garlic
-wolves_like_garlic && (vampires_like_sunshine || vampires_like_garlic)
-(wolves_like_garlic && vampires_like_garlic) || wolves_like_sunshine
-vampires_like_garlic
-!vampires_like_garlic
-!(wolves_like_sunshine && wolves_like_garlic)
-
-# Indications of not being a vampire:
-age_ancient = false
-age_computes = true
-likes_garlic = true
-likes_insurance = true
-has_vampire_name = false
-
-# Vampire detection logic:
-
-if age_computes == true && likes_garlic == true
-  
+# Ask about allergies
+puts "Do you have any allergies?\nName them one at a time and press enter. \nWhen you\'re finished, type 'done' and press enter."
+array = []
+input = ' '
+while input != 'done' && input != 'sunshine'
+  input = gets.chomp
+  array.push input
+end
+# Check for sunshine
+if array.include? 'sunshine'
+  allergic_to_sunshine = true
+  puts "allergic_to_sun is true"
+  is_vampire = "Probably"
+else
+  allergic_to_sunshine = false
+  puts "allergic_to_sun is false"
 end
 
+# Match the following conditions in the order they're listed. 
+# Your program should base its result on the latest condition matched, 
+# not the first condition matched. 
+# In other words, it's not a "only one condition will apply" scenario. 
+# This may mean repeatedly updating a variable as each condition is checked, 
+# so that the variable always contains the most precise result.
 
-# If the employee got their age right, and is willing to eat garlic bread or sign up for insurance, the result is “Probably not a vampire.”
-# If the employee got their age wrong, and hates garlic bread or waives insurance, the result is “Probably a vampire.”
-# If the employee got their age wrong, hates garlic bread, and doesn’t want insurance, the result is “Almost certainly a vampire.”
-# Anyone going by the name of “Drake Cula” or “Tu Fang” is clearly a vampire, because come on. In that case, you should print “Definitely a vampire.”
+# Vampire detection logic:
+# age right, and willing to eat garlic or sign up for insurance
+# “Probably not.”
+
+is_vampire = "Inconclusive"
+if age_computes == true && (likes_garlic == true || likes_insurance == true)
+  is_vampire = "Probably not"
+end
+# age wrong, and hates garlic bread or waives insurance
+# “Probably.”
+if age_computes == false && (likes_garlic == false || likes_insurance == false)
+  is_vampire = "Probably"
+end
+# age wrong, hates garlic bread, and doesn’t want insurance
+# “Almost certainly.”
+if age_computes == false && likes_garlic == false && likes_insurance == false
+  is_vampire = "Almost certainly"
+end
+# “Drake Cula” or “Tu Fang” 
+# “Definitely a vampire.”
+if has_vampire_name == true
+  is_vampire = "Definitely"
 # Otherwise, print “Results inconclusive.”
+end
+
+if allergic_to_sunshine == true
+  puts "\nRESULT: Probably a vampire"
+elsif is_vampire == "Inconclusive"
+  puts "\nRESULT: Results inconclusive."
+else
+  puts "\nRESULT: #{is_vampire} a vampire."
+end
+
+puts "------------------- END -------------------"
+
+# End qty do loop
+end
+
+puts "Actually, never mind!\nWhat do these questions have to do with anything?\nLet's all be friends.\n"
+puts "-------------------THE REAL END -------------------"
