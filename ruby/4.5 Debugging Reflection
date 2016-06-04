@@ -1,0 +1,17 @@
+Consider the workflow advice above, and compare it to your coding process so far. 
+
+1. Good: I test my code often. I like to confirm my victories and correct my misunderstandings.
+2. Good: I think I name my variables well; contextual without being overly-specific.
+3. Bad: I don't commit often enough. My code is broken so much of the time, I'm not always thinking "this is a great time to commit."
+
+How can your workflow improve? What mistakes have caused you the most trouble in the past? 
+
+1. Walking away from troubled or broken code with fixes in process, and not knowing what the hell is going on next time I look at it.
+
+2. Accidentally working on the master branch.
+
+Write a paragraph or two about flaws in your workflow and how you plan to break any bad habits. 
+
+1. Commenting while de-bugging is brilliant; this is something I can do.
+
+2. Leaving myself more notes in general is a better way for me to communicate with my future-workflow-self.
