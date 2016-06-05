@@ -1,0 +1,18 @@
+goof = 'wombat'
+test = "a\tthing\n#{goof}"
+test2 = 'a\tthing\n#{goof}'
+
+puts 'using print'
+print test
+puts 'using puts'
+puts test
+puts 'using p'
+p test
+
+print "\n\n\n single quotes"
+puts 'using print'
+print test2
+puts 'using puts'
+puts test2
+puts 'using p'
+p test2
