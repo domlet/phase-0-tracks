@@ -16,6 +16,6 @@ For sale: yes
 Weeks old: 8
 
 BEHAVIOR -----------------------
-Chew_toy
-Pee_on_floor
+Chew
+Pee
 Whimper
