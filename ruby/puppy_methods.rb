@@ -66,7 +66,7 @@ scooter.destroy("laptop")
 class Baby
 
   def initialize
-    puts "Welcome, baby!"
+    puts "Welcomebaby"
   end
 
   def primal_scream
@@ -89,15 +89,16 @@ end
 # Use a loop to make 50 instances of your class.
 
 
-# x = 1
-# while x < 5
-#   babies = [Baby.new(5)]
-#   x += 1
-#   p babies
-# end
+x = 1
+while x < 5
+  babies = [Baby.new]
+  x += 1
+end
 
+# .split(" ")
+babies = []
 
-Baby.new
+babies << []
 
 
 # babies [Welcome, baby!, Welcome, baby!, Welcome, baby!, Welcome, baby!, Welcome, baby!]
