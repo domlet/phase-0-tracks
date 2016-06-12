@@ -79,3 +79,19 @@ remove_item(groc_list, "koolaid")
 update_quantity(groc_list, "Ice Cream", 4)
 
 
+# Release 5: Reflect
+
+# What did you learn about pseudocode from working on this challenge?
+# If you're consistent in your pseudocode, it lays out a formula for your actual code.
+
+# What are the tradeoffs of using arrays and hashes for this challenge?
+Well, you can't well associate a quantity with an item if you're only using an array, hehe.
+# What does a method return?
+
+# What kind of things can you pass into methods as arguments?
+
+# How can you pass information between methods?
+
+# What concepts were solidified in this challenge, and what concepts are still confusing?
+
+
