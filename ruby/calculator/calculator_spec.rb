@@ -26,6 +26,6 @@ describe Calculator do
   end
 
   it "divides two integers" do
-    expect(calculator.multiply(12,3)).to eq 4
+    expect(calculator.divide(12,3)).to eq 4
   end
 end
