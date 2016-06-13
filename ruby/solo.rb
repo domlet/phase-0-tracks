@@ -15,7 +15,7 @@ attr_accessor :attitude, :age
 
 # Use an initialize method that sets at least one attribute
 
-  def initialize
+  def initialize(name, attitude, age)
     puts "One more #{Barrista} has joined us."
   end
 
@@ -39,7 +39,7 @@ end
 
 # # # # # # 
 
-Andre = Barrista.new
+Andre = Barrista.new("Andre", "Relaxed", 22)
 Andre.greeting
 Andre.pull_shot("single")
 Andre.break(5)
@@ -49,10 +49,11 @@ Andre.break(5)
 puts "### WELCOME USER ###"
 puts "How many instances would you like to create? (Enter integer.)"
 number_of_instances = gets.chomp.to_i
+staff = []
 number_of_instances.times do 
-  Staff = [] << Barrista.new
+  staff = [] << Barrista.new("Name", "Cool", 23)
 end
-
+p staff
 
 
 # User can create as many instances of your class as they like.
