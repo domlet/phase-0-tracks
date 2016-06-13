@@ -85,13 +85,17 @@ update_quantity(groc_list, "Ice Cream", 4)
 # If you're consistent in your pseudocode, it lays out a formula for your actual code.
 
 # What are the tradeoffs of using arrays and hashes for this challenge?
-Well, you can't well associate a quantity with an item if you're only using an array, hehe.
-# What does a method return?
+# # Well, you can't well associate a quantity with an item if you're only using an array, hehe.
 
-# What kind of things can you pass into methods as arguments?
+# # What does a method return?
+# Methods return the result of the actions. Sometimes true/false, an integer, or a variable/string.
 
-# How can you pass information between methods?
+# # What kind of things can you pass into methods as arguments?
+# Strings, integers
 
-# What concepts were solidified in this challenge, and what concepts are still confusing?
+# # How can you pass information between methods?
+# Using variables across methods.
 
+# # What concepts were solidified in this challenge, and what concepts are still confusing?
+# Modifying items in an array now makes more sense. What to put in argument ()s. I need to practice code blocks using "do" and "each".
 

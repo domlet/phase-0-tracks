@@ -1,0 +1,4 @@
+class Vacation
+
+
+end
