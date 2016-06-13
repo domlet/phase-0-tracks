@@ -1,29 +1,52 @@
 class Santa
+    attr_reader :ethnicity
+    attr_accessor :age, :gender
 
-  def initialize(gender, ethnicity)
-    puts "Initializing Santa instance ..."
-    @gender = "" 
-    @ethnicity = ""
-  end
+    def initialize(gender, ethnicity)
+        
+        @gender = gender
+        @ethnicity = ethnicity
 
-    @reindeer_ranking = ["Rudolph", "Dasher", "Dancer", "Prancer", "Vixen", "Comet", "Cupid", "Donner", "Blitzen"]
-    @age = 0
+        puts "Initializing Santa instance..."
+        @reindeer_ranking = [
+                            "Rudolph", "Dasher", 
+                            "Dancer", "Prancer", 
+                            "Vixen", "Comet",   
+                            "Cupid", "Donner", 
+                            "Blitzen"
+                            ]
 
-  def speak
-    puts "Ho, ho, ho! Haaaappy holidays!" 
-  end
+        @age = 0
 
-  def eat_milk_and_cookies(cookie)
-    puts "That was a good #{cookie}!" 
-  end
+    end
+
+    def speak
+        puts 'Ho, ho, ho! Haaaappy holidays!'
+
+    end
+
+    def eat_milk_and_cookies(cookie)
+        puts "That was a good #{cookie}!"
+
+    end
+
+    def celebrate_birthday
+        @age += 1
+    end
+
+    def get_mad_at(reindeer_name)
+        puts "Santa got mad at #{reindeer_name}! They know what they did!"
+        reindeer_index = @reindeer_ranking.index(reindeer_name)
+        @reindeer_ranking.delete_at(reindeer_index)
+        @reindeer_ranking.push(reindeer_name)
+        p @reindeer_ranking
+    end
 
 end
 
-gregory = Santa.new("nonbinary","albino")
-
-gregory.speak
-
-gregory.eat_milk_and_cookies("Oreo")
+saint_nick = Santa.new("agender", "black")
+saint_nick.speak
+saint_nick.eat_milk_and_cookies('cookie')
 
 santas = []
 santas << Santa.new("agender", "black")
@@ -34,26 +57,10 @@ santas << Santa.new("female", "prefer not to say")
 santas << Santa.new("gender fluid", "Mystical Creature (unicorn)")
 santas << Santa.new("N/A", "N/A")
 
-santas.each do |age|
-  puts "Creating a santa named #{name} ..."
-  puppies << Puppy.new(name)
-  puts "There are now #{puppies.length} Puppy instances in the array"
-  puts "----"
-end
+p saint_nick.celebrate_birthday
 
-
-# Add three attribute-changing methods to your Santa class:
-
-# celebrate_birthday should age Santa by one year.
-
-# get_mad_at can take a reindeer's name as an argument, and move that 
-# reindeer in last place in the reindeer rankings. Vixen knows what he did.
-
-# The @gender attribute should have a setter method that allows @gender to be reassigned from outside the class definition.
-
-# Add two "getter" methods as well:
-# The method age should simply return @age.
-# The method ethnicity should return @ethnicity.
-
-# Update your driver code to test your work.
-
+saint_nick.get_mad_at("Vixen")
+p saint_nick.age
+p saint_nick.gender
+p saint_nick.gender = "non gender"
+p saint_nick.ethnicity
