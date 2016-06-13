@@ -17,6 +17,15 @@ attr_accessor :attitude, :age
 
   def initialize(name, attitude, age)
     puts "One more #{Barrista} has joined us."
+    @name = name
+    @attitude = attitude
+    @age = age
+  end
+
+  def list_barristas
+    staff = []
+    staff.each do |i|
+    puts i    
   end
 
   def greeting
@@ -46,6 +55,8 @@ Andre.break(5)
 
 # Add user interface 
 # (a user can interact with your program via the command line).
+# User can create as many instances of your class as they like.
+
 puts "### WELCOME USER ###"
 puts "How many instances would you like to create? (Enter integer.)"
 number_of_instances = gets.chomp.to_i
@@ -55,8 +66,7 @@ number_of_instances.times do
 end
 p staff
 
-
-# User can create as many instances of your class as they like.
+list_barristas
 
 # Prompt the user for each attribute, 
 # and don't forget to convert their input to the appropriate data type. 
