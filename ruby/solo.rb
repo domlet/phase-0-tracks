@@ -16,20 +16,14 @@ attr_accessor :attitude, :age
 # Use an initialize method that sets at least one attribute
 
   def initialize(name, attitude, age)
-    puts "One more #{Barrista} has joined us."
+    puts "One more #{Barrista} has joined us! Welcome #{name} (they are super #{attitude}), age #{age}."
     @name = name
     @attitude = attitude
     @age = age
   end
 
-  def list_barristas
-    staff = []
-    staff.each do |i|
-    puts i    
-  end
-
   def greeting
-    puts "Hi, I'm #{name}, what can I get for you?"
+    puts "Hi, what can I get for you?"
   end
 
   def pull_shot(single_or_double)
@@ -62,11 +56,18 @@ puts "How many instances would you like to create? (Enter integer.)"
 number_of_instances = gets.chomp.to_i
 staff = []
 number_of_instances.times do 
-  staff = [] << Barrista.new("Name", "Cool", 23)
+  puts "Name?"
+  name = gets.chomp
+  puts "Attitude?"
+  attitude = gets.chomp
+  puts "Age?"
+  age = gets.chomp.to_i
+  # staff = [] << Barrista.new("#{name}", "#{attitude}", "#{age}")
+  staff.push([Barrista.new("#{name}", "#{attitude}", "#{age}")])
 end
 p staff
 
-list_barristas
+
 
 # Prompt the user for each attribute, 
 # and don't forget to convert their input to the appropriate data type. 
