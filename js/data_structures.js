@@ -5,3 +5,4 @@ colors.push("white")
 console.log(colors)
 
 horseNames.push("Scooby")
+console.log(horseNames)
