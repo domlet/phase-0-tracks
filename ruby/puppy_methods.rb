@@ -49,8 +49,11 @@ end
 # Verify that your instance can now fetch a ball. 
 
 scooter = Puppy.new
+
 toy = "shoe"
 scooter.fetch(toy)
+
+scooter.fetch("pork chop")
 
 scooter.speak(5)
 
