@@ -1,3 +1,28 @@
+# At the top of your file, add a method that takes three items as parameters and returns an array of those items. So build_array(1, "two", nil) would return [1, "two", nil]. This won't take much code, but the syntax might feel a bit odd. At the bottom of the file, call the method to show that it works.
+
+def build_array(a, b, c)
+  new_array = [a, b, c]
+end
+
+test = build_array("dom", "alexis", "levi")
+p test
+
+# At the top of your file, add a method that takes an array and an item as parameters, and returns the array with the item added. So add_to_array([], "a") would return ["a"], and add_to_array(["a", "b", "c", 1, 2], 3) would return ["a", "b", "c", 1, 2, 3]. Print a few test calls of the method.
+
+def add_to_array(x, y)
+  combined_array = x
+  combined_array.push(y)
+end
+
+testing_add_to_array = add_to_array([8, 7, 6], 1)
+p testing_add_to_array
+
+testing_add_to_array = add_to_array([], 12)
+p testing_add_to_array
+
+testing_add_to_array = add_to_array(["doobie"], "noobie")
+p testing_add_to_array
+
 # Initialize an empty array and store it in a variable (you can choose the name). Print the variable using p.
 
 array = []
