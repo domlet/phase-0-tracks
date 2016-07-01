@@ -27,9 +27,10 @@ flowers.each {|flower| puts "I like to see a good #{flower}!"}
 p flowers
 
 # map on array
-puts flowers #before
-flowers.map! { "Hello" }
-puts flowers
+puts "\n"
+p flowers
+flowers.map! { |flower| "Dom Brassey selected a #{flower}." }
+p flowers
 
 # each on hash
 puts "\n"
