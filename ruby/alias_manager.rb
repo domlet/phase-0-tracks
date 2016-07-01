@@ -30,13 +30,16 @@ def alias_manager(str)
   name1 = new_alias[1].chars
   p name1
 
+  # advance vowels (unfinished)
   p vowels = ["a","e","i","o","u"]
   
+  # advance consonants (unfinished)
   name0.map! { |name0| name0.next}
   name1.map! { |name0| name0.next}
   p name0
   p name1
   
+  # capitalize
   name0_string = name0.join('').capitalize
   name1_string = name1.join('').capitalize
   puts "#{name0_string} " + "#{name1_string}"
