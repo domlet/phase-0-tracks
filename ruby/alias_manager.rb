@@ -9,8 +9,8 @@
 # create new array with values for each of 2 names
 # lowercase all letters
 # reverse the order of the 2 values
-# break each array into 2 hashes (consonants and values)
-# advance consonants and values as appropriate
+# create hash for vowels, hash for consonants
+# identify consonants and vowels and apply behavior to advance letters as appropriate, referencing vowel hash and consonant hash
 # capitalize first letters
 # compare result to "Vussit Gimodoe"
 
