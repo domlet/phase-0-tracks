@@ -37,3 +37,66 @@ puts "\n"
 p books
 books.each { |subject, title| puts "The #{subject} book I'm reading is called #{title}."}
 p books
+
+# release 2
+
+array = ["hot", "cold", "warm"]
+pairs = {north: "1", south: "2", east: "3", west: "4"}
+
+# A method that iterates through the items, 
+# deleting any that meet a certain condition 
+#array
+puts "\n"
+p array
+puts array.delete_if {|x| x == "hot"}
+#hash
+puts "\n"
+p pairs
+puts pairs.delete_if {|direction, digit| digit == "1"}
+
+# A method that filters a data structure for only items 
+# that do satisfy a certain condition 
+array = ["blue", "red", "yellow"]
+pairs = {a: "1", b: "2", c: "3", d: "4"}
+
+#array
+puts "\n"
+p array
+puts array.keep_if {|x| x == "yellow"}
+#hash
+puts "\n"
+p pairs
+puts pairs.keep_if {|direction, digit| digit == "1"}
+
+# A different method that filters a data structure 
+# for only items satisfying a certain condition
+#array
+array = [1, 20, 3, 2, 5, 100]
+puts "\n"
+p array
+puts array.drop_while { |a| a < 100 }
+p array
+
+#hash
+months = { "jan" => 1, "feb" => 2, "mar" => 3 }
+puts "\n"
+p months
+puts months.select {|month_abbrev,numeral| month_abbrev == "jan"}  
+p months
+
+# A method that will remove items from a data structure 
+# until the condition in the block evaluates to false, then stops.
+
+#hash
+days = { "Monday" => 10, "Tuesday" => 11, "Wednesday" => 12 }
+puts "\n"
+p days
+puts days.reject {|day_name,day_number| day_number > 11}  
+p days
+
+#array
+arr = [100, 200, 300, 400, 50, 600]
+arr.reject! { |a| a < 200 }  
+puts "\n"
+puts arr                         
+
