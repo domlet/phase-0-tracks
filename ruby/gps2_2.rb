@@ -15,12 +15,19 @@
 
 
 
-def create_list (item, quantity=1)
+def create_list()
   grocery_list = {}
+
 end
 
-my_list = create_list("apple")
+# my_list = create_list("carrots apples cereal pizza")
+# p my_list
+
+my_list = {}
+my_list.push("pie" => 2)
 p my_list
+
+
 
 # Method to add an item to a list
 # input: item name and optional quantity
