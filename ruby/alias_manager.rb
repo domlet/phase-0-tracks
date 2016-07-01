@@ -37,6 +37,10 @@ def alias_manager(str)
   p name0
   p name1
   
+  name0_string = name0.join('').capitalize
+  name1_string = name1.join('').capitalize
+  puts "#{name0_string} " + "#{name1_string}"
+  
 end
 
 alias_manager("Felicia Torres")
