@@ -13,7 +13,7 @@
 class Clothing
 
   attr_reader :article
-  attr_accessor :color, :fabric_content, :is_clean, :year
+  attr_accessor :color, :fabric_content, :is_clean, :year, :wardrobe
 
   def initialize(color, fabric_content, article, is_clean, year)
     puts "--------
@@ -37,7 +37,7 @@ class Clothing
 
   def hem(article)
     altered = article[0...-2]
-    puts "We used scissors to hem! Previously '#{article}' is now '#{altered}'"
+    puts "We used scissors to hem! Previously boring '#{article}' is now trendy '#{altered}'"
   end
 
   def dye(color)
@@ -46,10 +46,19 @@ class Clothing
     puts "Success! The item is now #{@color}." 
   end
 
-  # def create_new_article(number)
-  #   number.times do
-  #   wardrobe << Clothing.new
-  # end
+end
+
+
+def create_new
+
+# Prompt user for each attribute, convert to appropriate data type. 
+
+  @color = gets.chomp
+  @fabric_content = gets.chomp
+  @article = gets.chomp
+  @is_clean = gets.chomp
+  @year = gets.chomp
+  puts "Thanks for the info!"
 
 end
 
@@ -67,9 +76,20 @@ fancy_blouse = Clothing.new("white", "silk", "blouse", false, 2001)
 fancy_blouse.dye("hot pink")
 wardrobe << fancy_blouse
 p fancy_blouse
+p wardrobe
 
 # Your user should be allowed to create as many instances of your class as they like.
-# Prompt the user for each attribute, and don't forget to convert their input to the appropriate data type. Store these class instances in an array.
+
+puts "How many articles of clothing should we make? Enter a number."
+create_quantity = gets.to_i
+puts "Awesome. We're gonna make #{create_quantity}."
+
+create_new
+
+# Store these class instances in an array.
+
+  wardrobe << Clothing.new(@color, @fabric_content, @article, @is_clean, @year)
+  p wardrobe 
 
 
 
