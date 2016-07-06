@@ -46,9 +46,16 @@ santas = []
 genders = ["agender", "female", "bigender", "male", "female", "gender fluid", "N/A"]
 ethnicities = ["black", "Latino", "white", "Japanese-African", "prefer not to say", "Mystical Creature (unicorn)", "N/A"]
 genders.length.times do |i|
-santas << Santa.new(genders[i], ethnicities[i])
+  santas << Santa.new(genders[i], ethnicities[i])
 end
 
 p santas
 
 # Release 4: Build Many, Many Santas
+
+random_santas = []
+genders = ["agender", "female", "bigender", "male", "female", "gender fluid", "N/A"]
+ethnicities = ["black", "Latino", "white", "Japanese-African", "prefer not to say", "Mystical Creature (unicorn)", "N/A"]
+100.times do |i|
+  random_santas << Santa.new(genders.sample, ethnicities.sample)
+end
