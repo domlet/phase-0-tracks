@@ -49,18 +49,32 @@ class Clothing
 end
 
 
+
 def create_new
-
-# Prompt user for each attribute, convert to appropriate data type. 
-
+create_quantity = gets.chomp.to_i
+while create_quantity >= 0
   @color = gets.chomp
   @fabric_content = gets.chomp
   @article = gets.chomp
   @is_clean = gets.chomp
   @year = gets.chomp
   puts "Thanks for the info!"
-
+create_quantity -= 1
 end
+end
+
+# def create_new
+
+# # Prompt user for each attribute, convert to appropriate data type. 
+
+#   @color = gets.chomp
+#   @fabric_content = gets.chomp
+#   @article = gets.chomp
+#   @is_clean = gets.chomp
+#   @year = gets.chomp
+#   puts "Thanks for the info!"
+
+# end
 
 wardrobe = []
 
@@ -81,10 +95,8 @@ p wardrobe
 # Your user should be allowed to create as many instances of your class as they like.
 
 puts "How many articles of clothing should we make? Enter a number."
-create_quantity = gets.to_i
 puts "Awesome. We're gonna make #{create_quantity}."
 
-create_new
 
 # Store these class instances in an array.
 
