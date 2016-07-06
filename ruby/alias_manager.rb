@@ -1,20 +1,49 @@
 # pseudocode and write a method "Felicia Torres"
-# creates a fake name with it 
-# by doing the following:
+# creates a fake name by doing the following:
 
 # Swap first and last name
-# Change all the vowels to the next vowel in 'aeiou' 
-# Change all of the consonants (everything else besides the vowels) 
-# to the next consonant in the alphabet. 
-# So 'a' would become 'e', 'u' would become 'a', and 'd' would become 'f'.
+# Change vowels to the next vowel in 'aeiou' 
+# Change consonants to the next consonant in the alphabet. 
+
+# # # PSEUDOCODE # # #
+# create new array with values for each of 2 names
+# lowercase all letters
+# reverse the order of the 2 values
+# create hash for vowels, hash for consonants
+# identify consonants and vowels and apply behavior to advance letters as appropriate, referencing vowel hash and consonant hash
+# capitalize first letters
+# compare result to "Vussit Gimodoe"
 
 
-def alias(x)
-  x.split(' ')
+def alias_manager(str)
+  orig_name = "#{str}".downcase
+  new_alias = []
+  new_alias = orig_name.split.reverse
+  p orig_name
+  p new_alias
+
+  name0 = []
+  name0 = new_alias[0].chars
+  p name0
+
+  name1 = []
+  name1 = new_alias[1].chars
+  p name1
+
+  # advance vowels (unfinished)
+  p vowels = ["a","e","i","o","u"]
+  
+  # advance consonants (unfinished)
+  name0.map! { |name0| name0.next}
+  name1.map! { |name0| name0.next}
+  p name0
+  p name1
+  
+  # capitalize
+  name0_string = name0.join('').capitalize
+  name1_string = name1.join('').capitalize
+  puts "#{name0_string} " + "#{name1_string}"
+  
 end
 
-alias("hi")
-puts alias
-
-array.each {|x| puts "Hello #{x}"}
-p array
+alias_manager("Felicia Torres")
