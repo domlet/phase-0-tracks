@@ -92,8 +92,20 @@ p wardrobe
 
 # When the user indicates that they are finished creating instances, loop through the array and print out the attributes of each instance as a confirmation message of what was created.
 
-  puts "Here's what's in your wardrobe:"
+  puts "\nHere's what's in your wardrobe:"
   wardrobe.length.times do |i|
     puts "#{wardrobe[i].color.ljust(10)} | #{wardrobe[i].fabric_content.ljust(18)} | #{wardrobe[i].article.ljust(10)} | #{wardrobe[i].is_clean} | #{wardrobe[i].year}"
   end  
+
+  # Sort by year (for fun)
+  def sort_by_year(array)
+      array.sort! { |a, b|  a.year <=> b.year }
+  end
+
+sort_by_year(wardrobe)
+
+  puts "\nHere's your wardrobe (articles sorted by year):"
+  wardrobe.length.times do |i|
+    puts "#{wardrobe[i].color.ljust(10)} | #{wardrobe[i].fabric_content.ljust(18)} | #{wardrobe[i].article.ljust(10)} | #{wardrobe[i].is_clean} | #{wardrobe[i].year}"
+  end
 
