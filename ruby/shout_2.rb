@@ -10,3 +10,9 @@ module Shout
 
 end
 
+# Add driver code underneath your module declaration that calls both of your module methods.
+
+Shout.yell_angrily("Hello")
+
+Shout.yell_happily("Goodbye")
+
