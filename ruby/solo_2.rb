@@ -27,7 +27,7 @@ class Clothing
     @fabric_content = fabric_content
     @article = article
     @is_clean = true
-    @year = nil
+    @year = year.to_i
   end
 
   def wash(article)
