@@ -12,8 +12,8 @@
 
 class Clothing
 
-  attr_reader :article
-  attr_accessor :color, :fabric_content, :is_clean, :year, :wardrobe
+  attr_reader :article, :fabric_content
+  attr_accessor :color, :is_clean, :year
 
   def initialize(color, fabric_content, article, is_clean, year)
     puts "--------
@@ -48,34 +48,7 @@ class Clothing
 
 end
 
-
-
-def create_new
-create_quantity = gets.chomp.to_i
-while create_quantity >= 0
-  @color = gets.chomp
-  @fabric_content = gets.chomp
-  @article = gets.chomp
-  @is_clean = gets.chomp
-  @year = gets.chomp
-  puts "Thanks for the info!"
-create_quantity -= 1
-end
-end
-
-# def create_new
-
-# # Prompt user for each attribute, convert to appropriate data type. 
-
-#   @color = gets.chomp
-#   @fabric_content = gets.chomp
-#   @article = gets.chomp
-#   @is_clean = gets.chomp
-#   @year = gets.chomp
-#   puts "Thanks for the info!"
-
-# end
-
+# Testing
 wardrobe = []
 
 red_jeans = Clothing.new("red", "cotton/spandex", "jeans", false, 2006)
@@ -94,16 +67,33 @@ p wardrobe
 
 # Your user should be allowed to create as many instances of your class as they like.
 
-puts "How many articles of clothing should we make? Enter a number."
-puts "Awesome. We're gonna make #{create_quantity}."
+  puts "How many articles of clothing should we make? Enter a number."
+  create_quantity = gets.chomp.to_i
+  
+  create_quantity.times do
+    puts "Awesome. We're gonna make #{create_quantity}."
+    print "Color: "
+    color = gets.chomp
+    print "Fabric content: "
+    fabric_content = gets.chomp
+    print "Article: "
+    article = gets.chomp
+    print "Is clean? y/n: "
+    is_clean = gets.chomp
+    print "Year (number): "
+    year = gets.chomp.to_i
+    puts "Thanks for the info!"
 
+    # # Store these class instances in an array.
 
-# Store these class instances in an array.
+    wardrobe << Clothing.new(color, fabric_content, article, is_clean, year)
 
-  wardrobe << Clothing.new(@color, @fabric_content, @article, @is_clean, @year)
-  p wardrobe 
-
-
+  end
 
 # When the user indicates that they are finished creating instances, loop through the array and print out the attributes of each instance as a confirmation message of what was created.
+
+  puts "Here's what's in your wardrobe:"
+  wardrobe.length.times do |i|
+    puts "#{wardrobe[i].color.ljust(10)} | #{wardrobe[i].fabric_content.ljust(18)} | #{wardrobe[i].article.ljust(10)} | #{wardrobe[i].is_clean} | #{wardrobe[i].year}"
+  end  
 
