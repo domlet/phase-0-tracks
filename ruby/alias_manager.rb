@@ -1,3 +1,5 @@
+# note to self to use https://stackoverflow.com/questions/5648198/rails-3-remove-items-belonging-to-array-b-from-array-a
+
 # pseudocode and write a method "Felicia Torres"
 # creates a fake name by doing the following:
 

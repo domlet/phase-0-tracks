@@ -33,11 +33,10 @@ p dom_list
 dom_list.add_item("pick up Amazon package")
 p dom_list
 
-
 # deletes an item
 # dom_list.delete_item("1")
-# dom_list.delete_at([1])
-# p dom_list
+list_array.delete_at([1])
+p dom_list
 
 # retrieves an item by index
 
