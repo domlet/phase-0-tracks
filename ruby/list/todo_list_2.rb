@@ -1,10 +1,14 @@
-class TodoList
+  # fun way to get multiple items in at initialization
+  # def initialize(*args)
+  #   @list_array = []
+  #     args.each do |item| 
+  #     @list_array << item
+  #   end
+  # end  
 
-  def initialize(*args)
-    @list_array = []
-      args.each do |item| 
-      @list_array << item
-    end
+class TodoList
+  def initialize(list_array)
+    @list_array = list_array
   end  
 
   def get_items
@@ -16,7 +20,6 @@ class TodoList
   end
 
   def delete_item(item)
-    # item.to_i
     @list_array.delete(item)
   end
 
@@ -25,21 +28,27 @@ class TodoList
   end
 end
 
-# stores the list items given on initialization
-dom_list = TodoList.new(1, 2)
-p dom_list
+  # it "stores the list items given on initialization" do
+  #   expect(list.get_items).to eq ["do the dishes", "mow the lawn"]
 
-# adds an item to the list
-dom_list.add_item("pick up Amazon package")
-p dom_list
+dom_list = TodoList.new(["do the dishes", "mow the lawn"])
+p dom_list.get_items
 
-# deletes an item
-# dom_list.delete_item("1")
-list_array.delete_at([1])
-p dom_list
+  # it "adds an item to the list" do
+  #   list.add_item("mop")
+  #   expect(list.get_items).to eq ["do the dishes", "mow the lawn", "mop"]
 
-# retrieves an item by index
+dom_list.add_item("mop")
+p dom_list.get_items
 
-# dom_list.get_item(1)
-# dom_list.get_items
-# p dom_list
+  # it "deletes an item" do
+  #   list.delete_item("do the dishes")
+  #   expect(list.get_items).to eq ["mow the lawn"]
+
+dom_list.delete_item("do the dishes")
+p dom_list.get_items
+
+  # it "retrieves an item by index" do
+  #   expect(list.get_item(0)).to eq "do the dishes"
+
+p dom_list.get_item(0)

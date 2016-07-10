@@ -1,4 +1,4 @@
-require_relative "todo_list.rb"
+require_relative "todo_list_2.rb"
 
 describe TodoList do
   let(:list) { TodoList.new(["do the dishes", "mow the lawn"]) }
