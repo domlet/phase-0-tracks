@@ -51,22 +51,31 @@ puts "\n # # # \n\n"
 
 class Nachos
 
-def initialize
-  puts "Nachos on the way..."
-end
+  attr_reader 
+  attr_accessor :order_is_wrong, :order_number, :order_numbers
 
-def announce 
-  puts "Your nachos are ready!"
-end
-
-def wrong_order(true_or_false)
-  if order_is_wrong == true
-    puts "This is not what I ordered. Can you correct my order?"
-  elsif 
-    puts "Thank you!"
+  def initialize
+    order_number = nil
+    puts "Nachos on the way..."
   end
-end
-      
+
+  def announce
+    print "Your nachos are ready!"
+  end
+
+  def wrong_order(order_is_wrong)
+    if order_is_wrong == true
+      puts "This is not what I ordered. Can you correct my order?"
+    elsif 
+      puts "Thank you for the correct order!"
+    end
+  end
+
+  # def give_order_numbers(number_of_orders)
+  #   order_numbers = Array (1..50)
+  #   puts order_numbers
+  # end
+
 end
 
 # # # 
@@ -83,40 +92,21 @@ p nacho_orders[12]
 
 order_421.announce
 
-# nacho_orders.each { |i| announce }
-
-order_is_wrong = true
 order_421.wrong_order(true)
+order_421.wrong_order(false)
 
-# def assign_order_numbers(50)
-  
-# class Baby
+nacho_orders.each do |i|
+  i.announce
+end
 
-#   def initialize
-#     puts "Welcome, baby!"
-#   end
+nacho_orders.each do |i|
+  i.wrong_order(false)
+end
 
-#   def primal_scream
-#     puts "AAAAAAHHHHHHH"
-#   end
+# order_numbers = Array (100..150)
+# p order_numbers
 
-#   def diaper_change
-#     if poop == true
-#       puts "You gotta change that baby's diaper."
-#     else
-#       puts "This baby smells good."
-#     end
-#   end
-
+# nacho_orders.each do |i|
+# order_number = 1
 # end
-
-
-# 5.times do 
-#   Family = [] << Baby.new
-# end
-
-# p Family
-
-
-
-
+# p nacho_orders
