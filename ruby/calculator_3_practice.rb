@@ -16,14 +16,22 @@ end
 # p calculate(4, '*', 4)
 # p calculate(12, '/', 2)
 
-puts "What calculation would you like to perform?\nFormat: x + y"
-user_input = gets.chomp
-user_input = user_input.split(' ')
+loop do
+  puts "What calculation would you like to perform?\nFormat: 'x + y' or 'done' to exit."
+  user_input = gets.chomp
+  user_input = user_input.split(' ') # creates array using spaces
 
-user_int1 = user_input[0].to_i
-symbol = user_input[1]
-user_int2 = user_input[2].to_i
+  if user_input == 'done'
+    puts = "Done."
+    break
+  end
 
-print "Answer: "
-p calculate(user_int1, symbol, user_int2)
+  user_int1 = user_input[0].to_i
+  symbol = user_input[1]
+  user_int2 = user_input[2].to_i
+
+  print "Answer: "
+  p calculate(user_int1, symbol, user_int2)
+
+end
 

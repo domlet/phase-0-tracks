@@ -14,7 +14,12 @@ end
 # Q4: allow the user to do as many calculations as they want. When the user types "done" instead of a calculation, the program can exit.
 # Q5: When the user has finished performing calculations, but just before the program exits, print a count of the calculations performed, and a history of all the calculations that have been performed
 
-    calculations = []
+calculations = []
+
+# def summary
+#  calculations.each |i|
+#  p "#{calculations}"[i]
+# end
 
 loop do 
     puts "Request an operation, like '4 + 5':\nOr type 'done' to exit."
@@ -23,7 +28,9 @@ loop do
     puts "Thank you, this has been awesome."
     number_of_calculations = calculations.length
     puts "#{number_of_calculations} calculations performed:"
-    p calculations
+    calculations.each do |i|
+      puts "#{calculations}"[i]
+    end
     exit
   else
     operation = user_input.split
