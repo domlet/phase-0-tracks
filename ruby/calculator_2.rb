@@ -11,21 +11,29 @@ end
 # p calculate(4, '*', 5) == 20
 # p calculate(20, '/', 5) == 4
 
-# Q4: allow the user to do as many calculations as they want (so the user might enter 3 + 4, receive the answer, and then enter 7 - 1 as the next calculation, and so on). When the user types "done" instead of a calculation, the program can exit.
+# Q4: allow the user to do as many calculations as they want. When the user types "done" instead of a calculation, the program can exit.
+# Q5: When the user has finished performing calculations, but just before the program exits, print a count of the calculations performed, and a history of all the calculations that have been performed
 
-def calculate_input(user_input)
+    calculations = []
+
+loop do 
+    puts "Request an operation, like '4 + 5':\nOr type 'done' to exit."
+    user_input = gets.chomp
   if user_input == 'done'
     puts "Thank you, this has been awesome."
+    number_of_calculations = calculations.length
+    puts "#{number_of_calculations} calculations performed:"
+    p calculations
     exit
   else
     operation = user_input.split
     int1 = operation[0].to_i
     symbol = operation[1]
     int2 = operation[2].to_i
-    p eval "#{int1} #{symbol} #{int2}"
-    puts " Request an operation, like '4 + 5':\nOr type 'done' to exit."
-    next_operation = gets.chomp
-    calculate_input(next_operation)
+    answer = eval "#{int1} #{symbol} #{int2}"
+    calculation = "#{user_input}" + " = " "#{answer}"
+    puts calculation
+    calculations.push(calculation)
   end
 end
 
