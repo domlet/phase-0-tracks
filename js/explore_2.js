@@ -1,3 +1,17 @@
+// Release 4
+
+// pseudocode a function that takes a string as a parameter and reverses the string. Remember that you can add strings in JavaScript, so '' + 'a' would result in the string 'a'.
+
+// declare a variable
+// call some kind of "reverse" method on the variable
+// print the result to the screen
+
+function reverseeee(string) {
+  return string.split('').reverse().join('');
+}
+
+console.log(reverseeee("hello"))
+
 // add two numbers
 function add(x, y) {
   return x+ y;
@@ -54,6 +68,12 @@ for (var i = 1; i < 11; i++) {
 
 // What happens if you change the i++ statement in a loop to i+=2?
 
-// Can you figure out how to count down from 10 instead? Try to reason through it instead of Googling, though you can look it up if you have to. Either way, now you know how to loop backward!
+for (var i = 0; i < 10; i+=2) {
+  console.log(i);
+}
 
+console.log ("// Can you figure out how to count down from 10 instead? Try to reason through it instead of Googling, though you can look it up if you have to. Either way, now you know how to loop backward!")
 
+for (var i = 10; i > 0; i--) {
+  console.log(i);
+}
