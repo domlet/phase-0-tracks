@@ -31,10 +31,10 @@ function Car(make, model, year, hasSunRoof) {
   this.printCar = function() {
   console.log("---------");
   console.log("Here is a nice formatted listing:");
-  console.log("// Make: " + newCar.make);
-  console.log("// Model: " + newCar.model);
-  console.log("// Year: " + newCar.year);
-  console.log("// Sun Roof: " + newCar.hasSunRoof);
+  console.log("// Make: " + this.make);
+  console.log("// Model: " + this.model);
+  console.log("// Year: " + this.year);
+  console.log("// Sun Roof: " + this.hasSunRoof);
   console.log("---------");
   };
   console.log("CAR INITIALIZATION COMPLETE");
@@ -48,3 +48,23 @@ newCar.printObject()
 var secondCar = new Car("Toyota", "Prius", 2007, false);
 secondCar.honk()
 secondCar.printCar()
+
+// If you wanted to loop through the keys and values of an object, how would you do that? (There are a few ways to accomplish this, and some gotchas that can happen depending on your approach.)
+
+// method 1
+var object = {Toyota:"red", "Honda":"blue", "Chevrolet":"gold"};
+for (var property in object) {
+  console.log("This vehicle is a " + object[property] + " " + property);
+}
+console.log("---------");
+
+// method 2
+
+// for (var key in p) {
+//   if (p.hasOwnProperty(key)) {
+//     console.log(key + " -> " + p[key]);
+//   }
+// }
+
+// Are there advantages to using constructor functions to create objects? Disadvantages? 
+
