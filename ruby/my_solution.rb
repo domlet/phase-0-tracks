@@ -1,16 +1,17 @@
 
 # Virus Predictor
 
-# I worked on this challenge [by myself, with: ].
-# We spent [#] hours on this challenge.
+# I worked on this challenge [by myself, with: John Kim].
+# We spent 2 hours on this challenge.
 
 # EXPLANATION OF require_relative
-#
+# 'require_relative' is for files you 'own' (and you point towards it with a relative or partial path) whereas 'require' is for things outside in the world, like gems, and includes a complete path.
 
 require_relative 'state_data'
 
 class VirusPredictor
 
+# assigns initial instance variables
   def initialize(state_of_origin, population_density, population)
     @state = state_of_origin
     @population = population
@@ -19,17 +20,16 @@ class VirusPredictor
     @number_of_deaths
   end
 
+# calls two other methods
   def virus_effects
     predicted_deaths
     speed_of_spread
-
-    ## put it here
     print "#{@state} will lose #{@number_of_deaths} people in this outbreak"
     puts " and will spread across the state in #{@number_of_months} months.\n\n"
   end
 
   private
-
+# calculates predicted deaths based on the population density 
   def predicted_deaths
     # predicted deaths is solely based on population density
     if @population_density >= 200
@@ -45,6 +45,7 @@ class VirusPredictor
     end
   end
 
+# calculates speed of spread based on the population density 
   def speed_of_spread #in months
     # We are still perfecting our formula here. The speed is also affected
     # by additional factors we haven't added into this functionality.
@@ -73,12 +74,20 @@ STATE_DATA.each do |key, value|
   current_state.virus_effects
 end
 
-
-# Alabama will lose 482202 people in this outbreak and will spread across the state in 2.0 months.
-# New Jersey will lose 3545836 people in this outbreak and will spread across the state in 0.5 months.
-# California will lose 15216572 people in this outbreak and will spread across the state in 0.5 months.
-# Alaska will lose 36572 people in this outbreak and will spread across the state in 2.5 months.
-
-
 #=======================================================================
 # Reflection Section
+
+# What are the differences between the two different hash syntaxes shown in the state_data file?
+# One makes you type more (rockets), but they function the same way. 
+
+# What does require_relative do? How is it different from require?
+# 'require_relative' is for files you 'own' (and you point towards it with a relative or partial path) whereas 'require' is for things outside in the world, like gems, and includes a complete path.
+
+# What are some ways to iterate through a hash?
+# use "do" in either of two formats
+
+# When refactoring virus_effects, what stood out to you about the variables, if anything?
+# they were well-named with the exception of 'speed'.
+
+# What concept did you most solidify in this challenge?
+# removing additional functions from a method.
