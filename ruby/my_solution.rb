@@ -5,7 +5,7 @@
 # We spent [#] hours on this challenge.
 
 # EXPLANATION OF require_relative
-# 
+#
 
 require_relative 'state_data'
 
@@ -70,18 +70,11 @@ end
 # DRIVER CODE
  # initialize VirusPredictor for each state
 
+STATE_DATA.each do |key, value|
+  current_state = VirusPredictor.new(key, value[:population_density], value[:population])
+  current_state.virus_effects
+end
 
-alabama = VirusPredictor.new("Alabama", STATE_DATA["Alabama"][:population_density], STATE_DATA["Alabama"][:population])
-alabama.virus_effects
-
-jersey = VirusPredictor.new("New Jersey", STATE_DATA["New Jersey"][:population_density], STATE_DATA["New Jersey"][:population])
-jersey.virus_effects
-
-california = VirusPredictor.new("California", STATE_DATA["California"][:population_density], STATE_DATA["California"][:population])
-california.virus_effects
-
-alaska = VirusPredictor.new("Alaska", STATE_DATA["Alaska"][:population_density], STATE_DATA["Alaska"][:population])
-alaska.virus_effects
 
 # Alabama will lose 482202 people in this outbreak and will spread across the state in 2.0 months.
 # New Jersey will lose 3545836 people in this outbreak and will spread across the state in 0.5 months.
