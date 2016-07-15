@@ -15,11 +15,17 @@ class VirusPredictor
     @state = state_of_origin
     @population = population
     @population_density = population_density
+    @number_of_months = 0.0
+    @number_of_deaths
   end
 
   def virus_effects
     predicted_deaths
     speed_of_spread
+
+    ## put it here
+    print "#{@state} will lose #{@number_of_deaths} people in this outbreak"
+    puts " and will spread across the state in #{@number_of_months} months.\n\n"
   end
 
   private
@@ -27,40 +33,32 @@ class VirusPredictor
   def predicted_deaths
     # predicted deaths is solely based on population density
     if @population_density >= 200
-      number_of_deaths = (@population * 0.4).floor
+      @number_of_deaths = (@population * 0.4).floor
     elsif @population_density >= 150
-      number_of_deaths = (@population * 0.3).floor
+      @number_of_deaths = (@population * 0.3).floor
     elsif @population_density >= 100
-      number_of_deaths = (@population * 0.2).floor
+      @number_of_deaths = (@population * 0.2).floor
     elsif @population_density >= 50
-      number_of_deaths = (@population * 0.1).floor
+      @number_of_deaths = (@population * 0.1).floor
     else
-      number_of_deaths = (@population * 0.05).floor
+      @number_of_deaths = (@population * 0.05).floor
     end
-
-    print "#{@state} will lose #{number_of_deaths} people in this outbreak"
-
   end
 
   def speed_of_spread #in months
     # We are still perfecting our formula here. The speed is also affected
     # by additional factors we haven't added into this functionality.
-    speed = 0.0
-
     if @population_density >= 200
-      speed += 0.5
+      @number_of_months += 0.5
     elsif @population_density >= 150
-      speed += 1
+      @number_of_months += 1
     elsif @population_density >= 100
-      speed += 1.5
+      @number_of_months += 1.5
     elsif @population_density >= 50
-      speed += 2
+      @number_of_months += 2
     else
-      speed += 2.5
+      @number_of_months += 2.5
     end
-
-    puts " and will spread across the state in #{speed} months.\n\n"
-
   end
 
 end
