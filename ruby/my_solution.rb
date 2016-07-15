@@ -5,8 +5,8 @@
 # We spent [#] hours on this challenge.
 
 # EXPLANATION OF require_relative
-#
-#
+# 
+
 require_relative 'state_data'
 
 class VirusPredictor
@@ -82,6 +82,11 @@ california.virus_effects
 
 alaska = VirusPredictor.new("Alaska", STATE_DATA["Alaska"][:population_density], STATE_DATA["Alaska"][:population])
 alaska.virus_effects
+
+# Alabama will lose 482202 people in this outbreak and will spread across the state in 2.0 months.
+# New Jersey will lose 3545836 people in this outbreak and will spread across the state in 0.5 months.
+# California will lose 15216572 people in this outbreak and will spread across the state in 0.5 months.
+# Alaska will lose 36572 people in this outbreak and will spread across the state in 2.5 months.
 
 
 #=======================================================================
