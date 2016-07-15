@@ -5,24 +5,28 @@
 # We spent [#] hours on this challenge.
 
 # EXPLANATION OF require_relative
-# 
+# 'require_relative' is for files you 'own' (and you point towards it with a relative or partial path) whereas 'require' is for things outside in the world, like gems, and includes a complete path.
 
 require_relative 'state_data'
 
 class VirusPredictor
 
+# assigns initial instance variables
   def initialize(state_of_origin, population_density, population)
     @state = state_of_origin
     @population = population
     @population_density = population_density
   end
 
+# calls two other methods
   def virus_effects
     predicted_deaths(@population_density, @population, @state)
     speed_of_spread(@population_density, @state)
   end
 
   private
+
+# calculates predicted deaths based on the population density 
 
   def predicted_deaths(population_density, population, state)
     # predicted deaths is solely based on population density
@@ -41,6 +45,8 @@ class VirusPredictor
     print "#{@state} will lose #{number_of_deaths} people in this outbreak"
 
   end
+
+# calculates speed of spread based on the population density 
 
   def speed_of_spread(population_density, state) #in months
     # We are still perfecting our formula here. The speed is also affected
@@ -69,7 +75,6 @@ end
 
 # DRIVER CODE
  # initialize VirusPredictor for each state
-
 
 alabama = VirusPredictor.new("Alabama", STATE_DATA["Alabama"][:population_density], STATE_DATA["Alabama"][:population])
 alabama.virus_effects
