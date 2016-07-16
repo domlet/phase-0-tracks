@@ -19,21 +19,13 @@
 
 def alias_manager(str)
   orig_name = "#{str}".downcase
-  new_alias = []
-  new_alias = orig_name.split.reverse
-  p orig_name
-  p new_alias
+  new_name = orig_name.split.reverse
+  name0 = new_name[0].chars
+  name1 = new_name[1].chars
 
-  name0 = []
-  name0 = new_alias[0].chars
-  p name0
-
-  name1 = []
-  name1 = new_alias[1].chars
-  p name1
-
-  # advance vowels (unfinished)
-  p vowels = ["a","e","i","o","u"]
+  # letter sets (for reference)
+  vowels = ["a","e","i","o","u"]
+  consonants = ["b,", "c,", "d,", "f,", "g,", "h,", "j,", "k,", "l,", "m,", "n,", "p,", "q,", "r,", "s,", "t,", "v,", "w,", "x,", "y,", "z"]
   
   # advance consonants (unfinished)
   name0.map! { |name0| name0.next}
