@@ -25,19 +25,19 @@ function reverseString(str) {
 
 // -------- Question 3 --------
 
-console.log(reverseString("dominique brassey"));
+console.log(reverseString("!sretsis olleH"));
 
-// Add driver code that prints the variable if some condition is true. The condition can be a silly one, like 1 == 1.
+// -------- Question 5 --------
 
 var domAwake = true;
-var noelleAwake = false;
+var noelleAwake = true;
 
-if (isOver21 && drinksAlcohol) {
-  console.log("Would you like a drink?");
-} else if (isOver21 && !drinksAlcohol) {
-  console.log("Can I get you some water?");
+if (domAwake && noelleAwake) {
+  console.log(reverseString("!sretsis olleH"));
+} else if (domAwake && !noelleAwake) {
+  console.log("The two sisters are not both awake.");
 } else {
-  console.log("One Shirley Temple, coming up!")
+  console.log("Neither sister are awake.")
 }
 
 
