@@ -1,4 +1,4 @@
-// Release 4
+// Release 4: Write a JavaScript Program
 
 // -------- Question 2 --------
 // stole this from https://codereview.stackexchange.com/questions/133769/reverse-string-in-javascript-without-using-reverse
@@ -40,8 +40,6 @@ if (domAwake && noelleAwake) {
 } else {
   console.log("Neither sister are awake.")
 }
-
-
 
 // add two numbers
 function add(x, y) {
