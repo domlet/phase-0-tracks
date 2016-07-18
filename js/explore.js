@@ -1,6 +1,6 @@
 // Release 4
 
-// -------- Question 1 --------
+// -------- Question 2 --------
 // stole this from https://codereview.stackexchange.com/questions/133769/reverse-string-in-javascript-without-using-reverse
 
 // declare a function "reverse" with argument "str"
@@ -13,7 +13,7 @@
 // return the result
 // show the user the result
 
-// -------- Question 2 --------
+// -------- Question 3 --------
 
 function reverseString(str) {
   var result = "";
@@ -23,9 +23,10 @@ function reverseString(str) {
   return result;
 }
 
-// -------- Question 3 --------
+// -------- Question 4 --------
 
-console.log(reverseString("!sretsis olleH"));
+sisterMessage = reverseString("!sretsis olleH");
+console.log(sisterMessage)
 
 // -------- Question 5 --------
 
