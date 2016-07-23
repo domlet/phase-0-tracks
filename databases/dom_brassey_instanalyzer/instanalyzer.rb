@@ -14,8 +14,9 @@ class Instanalyzer
   attr_accessor :user_entry, :word_count_array, :tag_count_array
 
   def initialize
-    puts "initializing new Instanalyzer..."
+    puts "Initializing new Instanalyzer..."
     @user_entry = user_entry
+    # @user_entry_array = user_entry_array
     @word_count_array = word_count_array
     @tag_count_array = tag_count_array
     # @word_ct = word_ct
@@ -25,11 +26,12 @@ class Instanalyzer
   def take_user_entry
     puts "Paste your Instagram caption here:"
     user_entry = gets.chomp
-    p user_entry
+    user_entry_array = user_entry.split 
+    p user_entry_array
   end
 
-  def word_count
-    word_count_array = user_entry.split
+  def word_count(text)
+    word_count_array = text.split
     word_ct = word_count_array.length
     puts "Words: #{word_ct}"
   end
@@ -40,7 +42,8 @@ end
 
 test = Instanalyzer.new
 test.take_user_entry
-# test.word_count
+# user_entry.word_count
+# p test
 
 # user_entry = "The #WeAreOrlando shooting has moved Latinx/Black-focused #techdiversity and workforce development pioneer @code2040 to double down on #LGBTQ inclusion and support. I read in the news that one of the families of the victims at first refused to claim his body. Shame. Do you have any family you want to leave on the bathroom floor? I don’t.
 # I walk through the streets of the #Tenderloin in #SanFrancisco. We got murals. But there are unclaimed bodies here, too. Are these your 'neighbors'? Diabetics with their feet rotting off. The unconscious derelict slumped in defecate. Contaminated, contagious people. Stuttering lunatics and howling ghosts. 
