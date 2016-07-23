@@ -11,39 +11,47 @@
 
 class Instanalyzer
 
+  attr_accessor :user_entry, :word_count_array, :tag_count_array
+
   def initialize
-    @word_count = word_count
-    @tag_count = tag_count
-    @contents = {}
+    puts "initializing new Instanalyzer..."
+    @user_entry = user_entry
+    @word_count_array = word_count_array
+    @tag_count_array = tag_count_array
+    # @word_ct = word_ct
+    # @tags_ct = tag_ct
   end
 
-  def word_count(text)
-    text.split
-    p word_count_array
+  def take_user_entry
+    puts "Paste your Instagram caption here:"
+    user_entry = gets.chomp
+    p user_entry
+  end
+
+  def word_count
+    word_count_array = user_entry.split
+    word_ct = word_count_array.length
+    puts "Words: #{word_ct}"
   end
 
 end
 
 # DRIVER CODE
 
-# puts "Paste your Instagram caption here:"
-# user_entry = gets.chomp
+test = Instanalyzer.new
+test.take_user_entry
+# test.word_count
 
-user_entry = "The #WeAreOrlando shooting has moved Latinx/Black-focused #techdiversity and workforce development pioneer @code2040 to double down on #LGBTQ inclusion and support. I read in the news that one of the families of the victims at first refused to claim his body. Shame. Do you have any family you want to leave on the bathroom floor? I don’t.
-
-I walk through the streets of the #Tenderloin in #SanFrancisco. We got murals. But there are unclaimed bodies here, too. Are these your 'neighbors'? Diabetics with their feet rotting off. The unconscious derelict slumped in defecate. Contaminated, contagious people. Stuttering lunatics and howling ghosts. 
-We walk by the living. We pay money to watch #TheWalkingDead. We give guns to police because we want someone to wash our sins from the Earth. Every great wall is a monument to what we are willing to sacrifice for wealth.
-
-#endwhitesilence #gentrification #homelessness #economicjustice #zombies #healthcare #communityorganizing #diversityintech #POCintech #LGBT #androgynous #queer #softbutch #femalemasculinity #feminism #tomboy #boi #lesbian #queersofig #dapperQ #genderfluid #sartorial #ootd #wiwt"
+# user_entry = "The #WeAreOrlando shooting has moved Latinx/Black-focused #techdiversity and workforce development pioneer @code2040 to double down on #LGBTQ inclusion and support. I read in the news that one of the families of the victims at first refused to claim his body. Shame. Do you have any family you want to leave on the bathroom floor? I don’t.
+# I walk through the streets of the #Tenderloin in #SanFrancisco. We got murals. But there are unclaimed bodies here, too. Are these your 'neighbors'? Diabetics with their feet rotting off. The unconscious derelict slumped in defecate. Contaminated, contagious people. Stuttering lunatics and howling ghosts. 
+# We walk by the living. We pay money to watch #TheWalkingDead. We give guns to police because we want someone to wash our sins from the Earth. Every great wall is a monument to what we are willing to sacrifice for wealth.
+# #endwhitesilence #gentrification #homelessness #economicjustice #zombies #healthcare #communityorganizing #diversityintech #POCintech #LGBT #androgynous #queer #softbutch #femalemasculinity #feminism #tomboy #boi #lesbian #queersofig #dapperQ #genderfluid #sartorial #ootd #wiwt"
 
 # count words
-word_count_array = user_entry.split
-word_count = word_count_array.length
-puts "Words: #{word_count}"
 
 # count tags
-tags_count = word_count_array.select  { |word| word[0, 1] == "#" } 
-puts "Tags: #{tags_count.length}"
+# tags_ct = word_count_array.select  { |word| word[0, 1] == "#" } 
+# puts "Tags: #{tags_ct.length}"
 
 # delete periods
-word_count_array.delete(-1)  { |char| char[-1] == "." } 
+# word_count_array.delete(-1)  { |char| char[-1] == "." } 
