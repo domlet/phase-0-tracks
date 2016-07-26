@@ -5,6 +5,8 @@ require 'sqlite3'
 db = SQLite3::Database.new("captions.db")
 db.results_as_hash = false
 
+time = Time.new
+
 # add method using string delimiters
 create_table_cmd = <<-SQL
   CREATE TABLE IF NOT EXISTS captions (
@@ -25,8 +27,9 @@ db.execute(create_table_cmd)
 # PRINT ROWS AFTER X
 p rows = db.execute("SELECT * from captions WHERE id < 20")
 puts "\n"
-rows.each do |caption, words, tags, words_ct, tags_ct|
+rows.each do |id, caption, words, tags, words_ct, tags_ct|
   puts "
+    id = #{id} 
     caption = #{caption} 
     words = #{words}
     tags = #{tags}
@@ -40,23 +43,18 @@ puts "\n"
 # update a value
 # db.execute("SET caption = 'John' WHERE tags_ct='6'")
 
-  def word_count(db, caption)
+  def word_count(db, caption, *args)
     user_input = caption #string
     word_count_array = caption.split #array
     words_ct = word_count_array.length #int (count the words)
-    tag_count_array = word_count_array.select  { |word| word[0, 1] == "#" } 
+    tag_count_array = word_count_array.select {|word| word[0, 1] == "#" } 
     tags_ct = tag_count_array.length
     puts "Words: #{words_ct}"
     puts "Tags: #{tags_ct}"
-    db.execute("INSERT INTO captions (caption) VALUES (?)", [caption])
+    puts "word_count_array: #{word_count_array}"
+    puts "tag_count_array: #{tag_count_array}"
+    db.execute("INSERT INTO captions (caption, words, tags, words_ct, tags_ct) VALUES (?,?,?,?,?)", [caption, 1, 2, 3, 4])
   end
-
-
-# db.execute("INSERT INTO captions (caption, words, tags, words_ct, tags_ct) VALUES (#{user_input}, #{word_count_array}, #{tag_count_array}, #{words_ct}, #{tags_ct})")
-
-
-# add a new caption
-p db
 
 puts "// This application will analyze your Instagram captions.\n//Please paste your Instagram caption here:\n"
 word_count(db, gets.chomp)
