@@ -5,7 +5,7 @@ require 'sqlite3'
 db = SQLite3::Database.new("captions.db")
 db.results_as_hash = false
 
-time = Time.new
+# time = Time.new
 
 # add method using string delimiters
 create_table_cmd = <<-SQL
@@ -21,29 +21,20 @@ SQL
 # create a captions table
 db.execute(create_table_cmd)
 
-# add a test kitten
-# db.execute("INSERT INTO captions (caption, words_ct) VALUES ('Bob hi', 100)")
-
 # PRINT ROWS AFTER X
-p rows = db.execute("SELECT * from captions WHERE id < 20")
+rows = db.execute("SELECT * from captions WHERE id > 20")
 puts "\n"
 rows.each do |id, caption, words, tags, words_ct, tags_ct|
-  puts "
-    id = #{id} 
-    caption = #{caption} 
-    words = #{words}
-    tags = #{tags}
-    words_ct = #{words_ct}
-    tags_ct = #{tags_ct}
-"
+  puts "id:".ljust(12) + "#{id}"
+  puts "caption:".ljust(12) + "#{caption}"
+  puts "words:".ljust(12) + "#{words}"
+  puts "tags:".ljust(12) + "#{tags}"
+  puts "words_ct:".ljust(12) + "#{words_ct}"
+  puts "tags_ct:".ljust(12) + "#{tags_ct}\n\n"
 end
 puts "\n"
 
-
-# update a value
-# db.execute("SET caption = 'John' WHERE tags_ct='6'")
-
-  def word_count(db, caption, *args)
+  def word_count(db, caption)
     user_input = caption #string
     word_count_array = caption.split #array
     words_ct = word_count_array.length #int (count the words)
@@ -53,18 +44,13 @@ puts "\n"
     puts "Tags: #{tags_ct}"
     puts "word_count_array: #{word_count_array}"
     puts "tag_count_array: #{tag_count_array}"
+    # put info in the db
     db.execute("INSERT INTO captions (caption, words, tags, words_ct, tags_ct) VALUES (?,?,?,?,?)", [caption, 1, 2, 3, 4])
   end
 
 puts "// This application will analyze your Instagram captions.\n//Please paste your Instagram caption here:\n"
 word_count(db, gets.chomp)
 
-
-# def create_kitten(db, name, age)
-#   db.execute("INSERT INTO kittens (name, age) VALUES (?, ?)", [name, age])
-# end
-
-# create_caption(db, caption)
 
 
 # db.execute("INSERT INTO captions (caption, words, tags, words_ct, tags_ct) VALUES (?,?,?,?,?)", [user_input, word_count_array, tag_count_array, words_ct, tags_ct])
