@@ -99,3 +99,24 @@ Ten Little Indians|Alexie, Sherman|4.08|39392|Ten Little Indians|Alexie, Sherman
 The Audacity of Hope: Thoughts on Reclaiming the American Dream|Obama, Barack|3.67|39542|The Audacity of Hope: Thoughts on Reclaiming the American Dream|Obama, Barack|3.67|39542
 American Theocracy: The Peril and Politics of Radical Religion, Oil and Borrowed Money in the 21st Century|Phillips, Kevin|3.85|39461|American Theocracy: The Peril and Politics of Radical Religion, Oil and Borrowed Money in the 21st Century|Phillips, Kevin|3.85|39461
 American Theocracy: The Peril and Politics of Radical Religion, Oil and Borrowed Money in the 21st Century|Phillips, Kevin|3.85|39461|American Theocracy: The Peril and Politics of Radical Religion, Oil and Borrowed Money in the 21st Century|Phillips, Kevin|3.85|39461
+
+
+# SELECT THE FIRST 10 RECORDS IN A TABLE
+sqlite> select * from captions LIMIT 10;
+1|Bob hi|10|||
+2||||x|y
+3|Bob hi|10|||
+4||||x|y
+5|Bob hi|10|||
+6||||x|y
+7|Bob hi|10|||
+8||||x|y
+9|Bob hi|10|||
+10|Bob hi|10|||
+
+# DISCOVER THE MAX NUMBER OF RECORDS IN A TABLE
+sqlite> select max(id) from captions;
+20
+
+
+
