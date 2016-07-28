@@ -1,0 +1,10 @@
+#lizard-photo {
+  width: 225px;
+  height: auto;
+}
+
+#text {
+  left: 0;
+  top: 200px;
+  position: fixed;
+}
