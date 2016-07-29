@@ -30,40 +30,55 @@
     <p>The Boucher family welcomed her back as if she had been a child of the house, and saved from death against all hope or probability. They chided her for going into the <em>battle</em> and exposing herself to <em>danger</em> during all those hours. They could not realize that she had meant to carry her <em>warriorship</em> so far, and asked her if it had really been her purpose to go right into the <em>turmoil</em> of the <em>fight</em>, or hadn't she got swept into it by <em>accident</em> and the <em>rush</em> of the <strong>troops</strong>? They begged her to be more careful another time. It was good advice, maybe, but it fell upon <em>pretty unfruitful soil</em>.</p>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
     <script>
-    // PEACEFUL WORDS
+    // DECLARE ARRAY OF PEACE NOUNS
     var peacefulNouns = ['harmony', 'agreement', 'accord', 'friendship', 'love', 'reconciliation', 'truce', 'unity', 'amity', 'armistice', 'cessation', 'conciliation', 'concord', 'neutrality', 'order', 'pacification', 'pacifism', 'treaty', 'unanimity', 'union'];
 
-    // // ITERATE THRU ARRAY
-    // function listWords() {
-    //     for (i = 0; i < peacefulNouns.length; i++) {
-    //         document.write(peacefulNouns[i]);
-    //     }
-    // }
-    // listWords(); // test
-
+    // CREATE ARRAY OF WARN NOUNS
     var warNouns = $("em").map(function() {
         return $(this).text()
     }).get();
 
-    document.write(warNouns);
+    // VERIFY ARRAYS
+    document.write("<br>" + "peacefulNouns: " + peacefulNouns + "<br>");
+    document.write("<br>" + "warNouns: " + warNouns + "<br>");
 
+    // COUNT WAR NOUNS ARRAY
+    document.write("<br>" + warNouns.length + "<br>")
 
-    function replaceNouns() {
+    $("em").css('background-color', 'yellow');
+    $("strong").css('background-color', 'lime');
+
+    // look at all "em" elements
+    // check if the text matches an item in the warNouns array
+    // if matches, ascertain the index
+    // replace the word with the matching index from the peaceNouns array
+
+    // ITERATE THRU PEACE NOUNS
+    function replaceWords() {
+        for (i = 0; i < peacefulNouns.length; i++) {
+            var nextPeaceNoun = peacefulNouns[i];
+            document.write(nextPeaceNoun);
+            $("em:first").text(nextPeaceNoun);
+            $("em:first").replaceWith( "<span>" + nextPeaceNoun + "</span>" );
+        }
+    }
+    replaceWords(); // test
+
+    // ADD ID TO ELEMENTS
+    function addId() {
         for (i = 0; i < warNouns.length; i++) {
-            $("em").text(warNouns[i]);
+            $("em").attr('id', i);
         }
     };
-    $("em").css('background-color', 'red');
+    addId();
 
-    replaceNouns(); // test
+    // $("em").css('background-color', 'red');
 
-    // $("em").attr('id', 'newId');
+    // function replaceWords() { // $("em").text("XXXXXXX"); // } // replaceWords();
+
+    $("span").css('background-color', 'yellow');
 
 
-    // function replaceWords() {
-    //     $("em").text("XXXXXXX");
-    // }
-    // replaceWords();
     </script>
 </body>
 
