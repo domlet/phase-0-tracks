@@ -41,18 +41,29 @@
     // }
     // listWords(); // test
 
-var testArray = $("em").map(function() {return $(this).text() }).get();
+    var warNouns = $("em").map(function() {
+        return $(this).text()
+    }).get();
 
-document.write(testArray);
+    document.write(warNouns);
 
-        $("em").css('background-color', 'red');
+
+    function replaceNouns() {
+        for (i = 0; i < warNouns.length; i++) {
+            $("em").text(warNouns[i]);
+        }
+    };
+    $("em").css('background-color', 'red');
+
+    replaceNouns(); // test
+
+    // $("em").attr('id', 'newId');
 
 
     // function replaceWords() {
     //     $("em").text("XXXXXXX");
     // }
     // replaceWords();
-
     </script>
 </body>
 
