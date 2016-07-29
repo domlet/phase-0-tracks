@@ -16,13 +16,14 @@
 </head>
 
 <body>
-    <h2>Excerpt from Chapter 18 Joan's First Battle-Field</h2>
-    <cite>https://www.gutenberg.org/files/2874/2874-h/2874-h.htm#link2HCH0025 from Personal Recollections of Joan of Arc Volume 1 (of 2)
+    <h2>Excerpt Personal Recollections of Joan of Arc, by Mark Twain</h2>
+    <cite>Source: https://www.gutenberg.org/files/2874/2874-h/2874-h.htm#link2HCH0025
     </cite>
-    <br>
-    <button id="formatted">Formatted</button>
-    <button id="annotated">Annotated</button>
-    <button id="illustrated">Illustrated</button>
+    <p>
+    </p>
+    <button id="select">Select Words</button>
+    <button id="war">War Story</button>
+    <button id="peace">Peace Story</button>
     <p>[...]</p>
     <p>Among the <strong>prisoners</strong> were a number of priests, and Joan took these under her protection and saved their <strong>lives</strong>. It was urged that they were most probably <strong>combatants</strong> in disguise, but she said:</p>
     <p>"As to that, how can any tell? They wear the livery of God, and if even one of these wears it rightfully, surely it were better that all the guilty should escape than that we have upon our hands the <em>blood</em> of that <em>innocent man</em>. I will lodge them where I lodge, and feed them, and sent them away in safety."</p>
@@ -30,55 +31,45 @@
     <p>The Boucher family welcomed her back as if she had been a child of the house, and saved from death against all hope or probability. They chided her for going into the <em>battle</em> and exposing herself to <em>danger</em> during all those hours. They could not realize that she had meant to carry her <em>warriorship</em> so far, and asked her if it had really been her purpose to go right into the <em>turmoil</em> of the <em>fight</em>, or hadn't she got swept into it by <em>accident</em> and the <em>rush</em> of the <strong>troops</strong>? They begged her to be more careful another time. It was good advice, maybe, but it fell upon <em>pretty unfruitful soil</em>.</p>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
     <script>
-    // DECLARE ARRAY OF PEACE NOUNS
-    var peacefulNouns = ['harmony', 'agreement', 'accord', 'friendship', 'love', 'reconciliation', 'truce', 'unity', 'amity', 'armistice', 'cessation', 'conciliation', 'concord', 'neutrality', 'order', 'pacification', 'pacifism', 'treaty', 'unanimity', 'union'];
-
-    // CREATE ARRAY OF WARN NOUNS
-    var warNouns = $("em").map(function() {
-        return $(this).text()
-    }).get();
-
-    // VERIFY ARRAYS
-    document.write("<br>" + "peacefulNouns: " + peacefulNouns + "<br>");
-    document.write("<br>" + "warNouns: " + warNouns + "<br>");
-
-    // COUNT WAR NOUNS ARRAY
-    document.write("<br>" + warNouns.length + "<br>")
-
+    
+    // HIGHLIGHT WAR NOUNS
     $("em").css('background-color', 'yellow');
     $("strong").css('background-color', 'lime');
 
-    // look at all "em" elements
-    // check if the text matches an item in the warNouns array
-    // if matches, ascertain the index
-    // replace the word with the matching index from the peaceNouns array
+    // COLLECT WAR NOUNS INTO ARRAYS
+    var warNouns = $("em").map(function() {
+        return $(this).text()
+    }).get();
+    var warNounsPl = $("strong").map(function() {
+        return $(this).text()
+    }).get();
+
+    // DECLARE ARRAY OF PEACE NOUNS
+    var peaceNouns = ['harmony', 'agreement', 'accord', 'friendship', 'love', 'reconciliation', 'truce', 'unity', 'amity', 'armistice', 'cessation', 'conciliation', 'concord', 'neutrality', 'order', 'pacification', 'pacifism', 'treaty', 'unanimity', 'union'];
+    var peaceNounsPl = ['hearts', 'rainbows', 'unicorns', 'cookies', 'candies', 'friends', 'lovers', 'cupcakes', 'dandelions', 'roses', 'daisies', 'petit fours', 'dances', 'pillows'];
+
+    // VERIFY ARRAYS
+    // document.write("<br>" + "peace: " + peaceNouns + "<br>");
+    // document.write("<br>" + "peacePl: " + peaceNounsPl + "<br>");
+    // document.write("<br>" + "war: " + warNouns + "<br>");
+    // document.write("<br>" + "warPl: " + warNounsPl + "<br>");
 
     // ITERATE THRU PEACE NOUNS
     function replaceWords() {
-        for (i = 0; i < peacefulNouns.length; i++) {
-            var nextPeaceNoun = peacefulNouns[i];
-            document.write(nextPeaceNoun);
+        for (i = 0; i < warNouns.length; i++) {
+            var nextPeaceNoun = peaceNouns[i];
             $("em:first").text(nextPeaceNoun);
-            $("em:first").replaceWith( "<span>" + nextPeaceNoun + "</span>" );
+            $("em:first").replaceWith("<span>" + nextPeaceNoun + "</span>");
+        }
+        for (i = 0; i < warNounsPl.length; i++) {
+            var nextPeaceNounPl = peaceNounsPl[i];
+            $("strong:first").text(nextPeaceNounPl);
+            $("strong:first").replaceWith("<span>" + nextPeaceNounPl + "</span>");
         }
     }
-    replaceWords(); // test
+    replaceWords(); // DRIVER CODE
 
-    // ADD ID TO ELEMENTS
-    function addId() {
-        for (i = 0; i < warNouns.length; i++) {
-            $("em").attr('id', i);
-        }
-    };
-    addId();
-
-    // $("em").css('background-color', 'red');
-
-    // function replaceWords() { // $("em").text("XXXXXXX"); // } // replaceWords();
-
-    $("span").css('background-color', 'yellow');
-
-
+    $("span").css('background-color', 'pink');
     </script>
 </body>
 
